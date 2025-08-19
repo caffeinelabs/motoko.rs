@@ -65,9 +65,6 @@ pub enum Token {
     #[regex(r"[a-zA-Z_][a-zA-Z_0-9]*", data)]
     Ident(Data),
 
-    #[token("_", data)]
-    Wild(Data),
-
     #[token("true", data!(PrimType::Bool))]
     #[token("false", data!(PrimType::Bool))]
     #[token("null", data!(PrimType::Null))]
@@ -101,8 +98,8 @@ impl Token {
         match self {
             Error => Err(()),
             LineComment(s) | BlockComment(s) | Open((s, _)) | Close((s, _)) | Dot(s) | Colon(s)
-            | Assign(s) | Operator(s) | Ident(s) | Wild(s) | Delim((s, _)) | Literal((s, _))
-            | Space(s) | Line(s) | MultiLine(s) | Unknown(s) => Ok(s),
+            | Assign(s) | Operator(s) | Ident(s) | Delim((s, _)) | Literal((s, _)) | Space(s)
+            | Line(s) | MultiLine(s) | Unknown(s) => Ok(s),
         }
     }
 }
