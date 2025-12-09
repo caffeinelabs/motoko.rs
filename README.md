@@ -16,7 +16,3 @@ Motoko tools for Rust.
 ## Related
 
 [Online interpreter](https://mo-vm.netlify.app/)
-
-## Contributing
-
-Contributions are welcome! Please check out the [contributor guidelines](https://github.com/dfinity/motoko.rs/blob/main/.github/CONTRIBUTING.md) for more information.
