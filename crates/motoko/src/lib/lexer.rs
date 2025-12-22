@@ -58,6 +58,10 @@ pub const KEYWORDS: &[&str] = &[
     "persistent",
     "transient",
     "do",
+    "implicit",
+    "weak",
+    "mixin",
+    "include",
 ];
 
 pub fn is_keyword(ident: &str) -> bool {
