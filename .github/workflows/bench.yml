@@ -6,24 +6,24 @@ jobs:
     name: run benchmark
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2.7.0
       with:
         fetch-depth: 0
     - name: Install stable toolchain
-      uses: actions-rs/toolchain@v1
+      uses: actions-rs/toolchain@16499b5e05bf2e26879000db0c1d13f7e13fa3af # v1.0.7
       with:
         profile: minimal
         toolchain: stable
         override: true
     - name: Cache cargo build
-      uses: actions/cache@v2
+      uses: actions/cache@8492260343ad570701412c2f464a5877dc76bace # v2
       with:
         path: |
           ~/.cargo/registry
           ~/.cargo/git
           target
         key: ${{ runner.os }}-bench-${{ hashFiles('**/Cargo.lock') }}
-    - uses: boa-dev/criterion-compare-action@master
+    - uses: boa-dev/criterion-compare-action@16002f0a9fb0b371d92ab13cec5f4978815200bd # master
       with:
         cwd: crates/motoko
         benchName: benchmark
